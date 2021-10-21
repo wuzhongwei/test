@@ -1,0 +1,42 @@
+{
+  "name": "TiBug.Nuxt",
+  "version": "1.0.0",
+  "description": "My funkadelic Nuxt.js project",
+  "author": "laozhang",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "BS": "git pull && nuxt build && nuxt start",
+    "generate": "nuxt generate",
+    "server": "npm run build && pm2 delete TiBug.Nuxt && pm2 start npm --name 'TiBug.Nuxt' -- start",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "firstserver": "npm run build && pm2 start npm --name 'TiBug.Nuxt' -- start",
+    "list": "pm2 list",
+    "stop": "pm2 stop 'TiBug.Nuxt'"
+  },
+  "config": {
+    "nuxt": {
+      "host": "127.0.0.1",
+      "port": "3089"
+    }
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "cross-env": "^5.2.0",
+    "element-ui": "^2.4.6",
+    "highlight.js": "^9.12.0",
+    "marked": "^0.3.19",
+    "mavon-editor": "^2.6.17",
+    "oidc-client": "^1.4.1",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "2.6.2",
+    "prettier": "1.14.3"
+  }
+}
